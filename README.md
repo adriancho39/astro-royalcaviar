@@ -1,4 +1,4 @@
-https://app.netlify.com/teams/adriancho39/projects
+https://royal-caviar.netlify.app/
 
 # Astro Starter Kit: Basics
 
