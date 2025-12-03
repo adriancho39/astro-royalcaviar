@@ -1,0 +1,100 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+// This is a static example. In a real app, you'd use dynamic routing.
+const product = {
+    title: "Royal Beluga",
+    price: "€450.00",
+    weight: "50g",
+    description:
+        "Our Royal Beluga caviar is the epitome of luxury. Harvested from the Huso Huso sturgeon, these large, pearlescent eggs offer a buttery, creamy texture that melts in your mouth. The flavor is delicate yet distinct, with notes of hazelnut and a clean, fresh finish.",
+    image: "https://images.unsplash.com/photo-1626202378372-c26668764268?q=80&w=1000&auto=format&fit=crop",
+    details: [
+        { label: "Species", value: "Huso Huso" },
+        { label: "Origin", value: "Caspian Sea" },
+        { label: "Grain Size", value: "3.2 - 3.4 mm" },
+        { label: "Color", value: "Light to Dark Grey" },
+    ],
+};
+---
+
+<Layout title={product.title}>
+    <section class="pt-32 pb-20 bg-black min-h-screen">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row gap-16 items-center">
+                <!-- Image Gallery -->
+                <div class="w-full lg:w-1/2">
+                    <div
+                        class="aspect-square bg-gray-900 overflow-hidden relative mb-4"
+                    >
+                        <img
+                            src={product.image}
+                            alt={product.title}
+                            class="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                        />
+                    </div>
+                    <div class="grid grid-cols-3 gap-4">
+                        <div class="aspect-square bg-gray-800"></div>
+                        <div class="aspect-square bg-gray-800"></div>
+                        <div class="aspect-square bg-gray-800"></div>
+                    </div>
+                </div>
+
+                <!-- Product Info -->
+                <div class="w-full lg:w-1/2">
+                    <p class="text-gold tracking-widest uppercase text-sm mb-4">
+                        Caviar Collection
+                    </p>
+                    <h1 class="text-4xl md:text-5xl font-serif text-white mb-6">
+                        {product.title}
+                    </h1>
+                    <p class="text-3xl text-white mb-8">{product.price}</p>
+
+                    <p class="text-gray-400 leading-relaxed mb-8">
+                        {product.description}
+                    </p>
+
+                    <div class="border-t border-b border-white/10 py-6 mb-8">
+                        <div class="grid grid-cols-2 gap-y-4">
+                            {
+                                product.details.map((detail) => (
+                                    <div>
+                                        <span class="block text-gray-500 text-xs uppercase tracking-widest mb-1">
+                                            {detail.label}
+                                        </span>
+                                        <span class="text-white">
+                                            {detail.value}
+                                        </span>
+                                    </div>
+                                ))
+                            }
+                        </div>
+                    </div>
+
+                    <div class="flex gap-4 mb-8">
+                        <div class="flex border border-white/20">
+                            <button
+                                class="px-4 py-2 text-white hover:bg-white/10"
+                                >-</button
+                            >
+                            <input
+                                type="text"
+                                value="1"
+                                class="w-12 bg-transparent text-center text-white border-none focus:outline-none"
+                            />
+                            <button
+                                class="px-4 py-2 text-white hover:bg-white/10"
+                                >+</button
+                            >
+                        </div>
+                        <button
+                            class="flex-1 bg-gold text-black uppercase tracking-widest text-xs font-bold hover:bg-white transition-colors py-4"
+                        >
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</Layout>

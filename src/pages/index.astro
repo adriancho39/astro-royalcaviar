@@ -1,11 +1,204 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
+import ProductCard from "../components/ProductCard.astro";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const featuredProducts = [
+	{
+		title: "Royal Beluga",
+		price: "€450.00",
+		weight: "50g",
+		image: "https://images.unsplash.com/photo-1626202378372-c26668764268?q=80&w=1000&auto=format&fit=crop",
+	},
+	{
+		title: "Imperial Ossetra",
+		price: "€280.00",
+		weight: "50g",
+		image: "https://images.unsplash.com/photo-1606850827286-a0e143491931?q=80&w=1000&auto=format&fit=crop",
+	},
+	{
+		title: "Golden Sevruga",
+		price: "€190.00",
+		weight: "50g",
+		image: "https://images.unsplash.com/photo-1550950158-d0d960dff51b?q=80&w=1000&auto=format&fit=crop",
+	},
+];
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="Home">
+	<!-- Hero Section -->
+	<section
+		class="relative h-screen flex items-center justify-center overflow-hidden"
+	>
+		<div class="absolute inset-0 z-0">
+			<img
+				src="https://images.unsplash.com/photo-1615147342761-9238e15d8b96?q=80&w=2000&auto=format&fit=crop"
+				alt="Luxury Caviar Background"
+				class="w-full h-full object-cover opacity-40"
+			/>
+			<div
+				class="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black"
+			>
+			</div>
+		</div>
+
+		<div class="relative z-10 text-center px-6 max-w-4xl mx-auto mt-20">
+			<p
+				class="text-gold tracking-[0.3em] uppercase text-sm mb-6 animate-fade-in-up"
+			>
+				Est. 1920
+			</p>
+			<h1
+				class="text-5xl md:text-7xl lg:text-8xl font-serif text-white mb-8 leading-tight animate-fade-in-up delay-100"
+			>
+				Taste the <br />
+				<span class="italic text-gold">Extraordinary</span>
+			</h1>
+			<p
+				class="text-gray-300 text-lg md:text-xl max-w-2xl mx-auto mb-12 leading-relaxed animate-fade-in-up delay-200"
+			>
+				Experience the world's finest sustainably sourced caviar. A
+				symphony of flavors for the most discerning palates.
+			</p>
+			<div class="animate-fade-in-up delay-300">
+				<a
+					href="/shop"
+					class="inline-block border border-white text-white px-10 py-4 uppercase tracking-widest text-xs hover:bg-white hover:text-black transition-all duration-300"
+				>
+					Discover Collection
+				</a>
+			</div>
+		</div>
+	</section>
+
+	<!-- Featured Collection -->
+	<section class="py-24 bg-black">
+		<div class="container mx-auto px-6">
+			<div class="text-center mb-20">
+				<h2 class="text-3xl md:text-4xl font-serif text-white mb-4">
+					The Royal Collection
+				</h2>
+				<div class="w-24 h-1 bg-gold mx-auto"></div>
+			</div>
+
+			<div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+				{
+					featuredProducts.map((product) => (
+						<ProductCard {...product} />
+					))
+				}
+			</div>
+
+			<div class="text-center mt-16">
+				<a
+					href="/shop"
+					class="text-gold hover:text-white transition-colors uppercase tracking-widest text-xs border-b border-gold pb-1"
+					>View All Products</a
+				>
+			</div>
+		</div>
+	</section>
+
+	<!-- Heritage Section -->
+	<section class="py-24 bg-dark-grey relative overflow-hidden">
+		<div class="container mx-auto px-6">
+			<div class="flex flex-col md:flex-row items-center gap-16">
+				<div class="w-full md:w-1/2">
+					<div class="relative">
+						<div
+							class="absolute -top-4 -left-4 w-24 h-24 border-t border-l border-gold/50"
+						>
+						</div>
+						<img
+							src="https://images.unsplash.com/photo-1574672280602-95993c078847?q=80&w=1000&auto=format&fit=crop"
+							alt="Caviar Tasting"
+							class="w-full h-[600px] object-cover grayscale hover:grayscale-0 transition-all duration-700"
+						/>
+						<div
+							class="absolute -bottom-4 -right-4 w-24 h-24 border-b border-r border-gold/50"
+						>
+						</div>
+					</div>
+				</div>
+
+				<div class="w-full md:w-1/2">
+					<p class="text-gold tracking-widest uppercase text-sm mb-4">
+						Our Heritage
+					</p>
+					<h2 class="text-4xl md:text-5xl font-serif text-white mb-8">
+						A Century of <br />Excellence
+					</h2>
+					<p class="text-gray-400 leading-relaxed mb-8">
+						For over 100 years, Royal Caviar has been synonymous
+						with the finest delicacies the world has to offer. We
+						meticulously select each tin to ensure an unforgettable
+						gastronomic experience.
+					</p>
+					<p class="text-gray-400 leading-relaxed mb-12">
+						Our commitment to sustainability and quality is
+						unwavering. We work directly with artisanal farms to
+						bring you caviar that is not only delicious but also
+						ethically sourced.
+					</p>
+					<a
+						href="/heritage"
+						class="inline-block bg-gold text-black px-8 py-3 uppercase tracking-widest text-xs font-bold hover:bg-white transition-colors"
+					>
+						Read Our Story
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Newsletter -->
+	<section class="py-24 bg-black border-t border-white/5">
+		<div class="container mx-auto px-6 text-center max-w-2xl">
+			<h2 class="text-3xl font-serif text-white mb-6">
+				Join the Inner Circle
+			</h2>
+			<p class="text-gray-400 mb-10">
+				Subscribe to receive exclusive offers, tasting invites, and the
+				latest news from Royal Caviar.
+			</p>
+
+			<form class="flex flex-col md:flex-row gap-4">
+				<input
+					type="email"
+					placeholder="Your Email Address"
+					class="flex-1 bg-transparent border border-white/20 text-white px-6 py-3 focus:outline-none focus:border-gold transition-colors"
+				/>
+				<button
+					type="submit"
+					class="bg-white text-black px-8 py-3 uppercase tracking-widest text-xs font-bold hover:bg-gold hover:text-white transition-colors"
+				>
+					Subscribe
+				</button>
+			</form>
+		</div>
+	</section>
 </Layout>
+
+<style>
+	.animate-fade-in-up {
+		animation: fadeInUp 1s ease-out forwards;
+		opacity: 0;
+		transform: translateY(20px);
+	}
+
+	.delay-100 {
+		animation-delay: 0.1s;
+	}
+	.delay-200 {
+		animation-delay: 0.2s;
+	}
+	.delay-300 {
+		animation-delay: 0.3s;
+	}
+
+	@keyframes fadeInUp {
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+</style>

@@ -1,0 +1,90 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="bg-black text-white pt-16 pb-8 border-t border-white/10">
+    <div class="container mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+            <div class="col-span-1 md:col-span-2">
+                <a
+                    href="/"
+                    class="text-3xl font-serif font-bold text-white tracking-widest uppercase mb-6 block"
+                >
+                    Royal <span class="text-gold">Caviar</span>
+                </a>
+                <p class="text-gray-400 max-w-md leading-relaxed">
+                    Purveyors of the finest caviar, sourced from the most
+                    pristine waters. Experience the epitome of luxury and taste.
+                </p>
+            </div>
+
+            <div>
+                <h3 class="text-gold font-serif text-lg mb-6 tracking-wider">
+                    Explore
+                </h3>
+                <ul class="space-y-4">
+                    <li>
+                        <a
+                            href="/shop"
+                            class="text-gray-400 hover:text-white transition-colors"
+                            >Our Collection</a>
+                    </li>
+                    <li>
+                        <a
+                            href="/heritage"
+                            class="text-gray-400 hover:text-white transition-colors"
+                            >Heritage & Story</a>
+                    </li>
+                    <li>
+                        <a
+                            href="/tasting"
+                            class="text-gray-400 hover:text-white transition-colors"
+                            >Tasting Guide</a>
+                    </li>
+                    <li>
+                        <a
+                            href="/blog"
+                            class="text-gray-400 hover:text-white transition-colors"
+                            >Journal</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div>
+                <h3 class="text-gold font-serif text-lg mb-6 tracking-wider">
+                    Contact
+                </h3>
+                <ul class="space-y-4">
+                    <li class="text-gray-400">123 Luxury Lane, Paris</li>
+                    <li class="text-gray-400">+33 1 23 45 67 89</li>
+                    <li class="text-gray-400">concierge@royalcaviar.com</li>
+                </ul>
+            </div>
+        </div>
+
+        <div
+            class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center"
+        >
+            <p class="text-gray-500 text-sm">
+                &copy; {currentYear} Royal Caviar. All rights reserved.
+            </p>
+            <div class="flex space-x-6 mt-4 md:mt-0">
+                <a
+                    href="#"
+                    class="text-gray-500 hover:text-gold transition-colors"
+                    >Instagram</a
+                >
+                <a
+                    href="#"
+                    class="text-gray-500 hover:text-gold transition-colors"
+                    >Facebook</a
+                >
+                <a
+                    href="#"
+                    class="text-gray-500 hover:text-gold transition-colors"
+                    >Twitter</a
+                >
+            </div>
+        </div>
+    </div>
+</footer>

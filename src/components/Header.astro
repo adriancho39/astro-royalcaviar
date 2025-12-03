@@ -1,0 +1,84 @@
+---
+
+---
+
+<header class="fixed w-full z-50 transition-all duration-300" id="main-header">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+        <a
+            href="/"
+            class="text-2xl font-serif font-bold text-white tracking-widest uppercase"
+        >
+            Royal <span class="text-gold">Caviar</span>
+        </a>
+
+        <nav class="hidden md:flex space-x-8">
+            <a
+                href="/"
+                class="text-white hover:text-gold transition-colors text-sm tracking-widest uppercase"
+                >Home</a
+            >
+            <a
+                href="/shop"
+                class="text-white hover:text-gold transition-colors text-sm tracking-widest uppercase"
+                >Shop</a
+            >
+            <a
+                href="/heritage"
+                class="text-white hover:text-gold transition-colors text-sm tracking-widest uppercase"
+                >Heritage</a
+            >
+            <a
+                href="/contact"
+                class="text-white hover:text-gold transition-colors text-sm tracking-widest uppercase"
+                >Contact</a
+            >
+        </nav>
+
+        <div class="flex items-center space-x-4">
+            <button class="text-white hover:text-gold transition-colors">
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-6 w-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                >
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                </svg>
+            </button>
+            <button class="text-white hover:text-gold transition-colors">
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-6 w-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                >
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
+                </svg>
+            </button>
+        </div>
+    </div>
+</header>
+
+<script>
+    const header = document.getElementById("main-header");
+
+    window.addEventListener("scroll", () => {
+        if (window.scrollY > 50) {
+            header.classList.add("bg-black/90", "backdrop-blur-sm", "py-2");
+            header.classList.remove("py-4");
+        } else {
+            header.classList.remove("bg-black/90", "backdrop-blur-sm", "py-2");
+            header.classList.add("py-4");
+        }
+    });
+</script>

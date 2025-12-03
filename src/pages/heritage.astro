@@ -1,0 +1,78 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Heritage">
+    <section class="pt-32 pb-20 bg-black min-h-screen">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto text-center mb-20">
+                <p class="text-gold tracking-widest uppercase text-sm mb-4">
+                    Our Story
+                </p>
+                <h1 class="text-4xl md:text-6xl font-serif text-white mb-8">
+                    A Legacy of Taste
+                </h1>
+            </div>
+
+            <div class="space-y-32">
+                <!-- Section 1 -->
+                <div class="flex flex-col md:flex-row items-center gap-16">
+                    <div class="w-full md:w-1/2">
+                        <img
+                            src="https://images.unsplash.com/photo-1559339352-11d035aa65de?q=80&w=1000&auto=format&fit=crop"
+                            alt="Fisherman"
+                            class="w-full h-[500px] object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                        />
+                    </div>
+                    <div class="w-full md:w-1/2">
+                        <h2 class="text-3xl font-serif text-white mb-6">
+                            The Beginning
+                        </h2>
+                        <p class="text-gray-400 leading-relaxed mb-6">
+                            Founded in 1920, Royal Caviar began as a small
+                            family endeavor on the shores of the Caspian Sea.
+                            Our ancestors understood that true luxury lies in
+                            patience and respect for nature.
+                        </p>
+                        <p class="text-gray-400 leading-relaxed">
+                            Generations later, we continue to uphold these
+                            values, ensuring that every tin of caviar we produce
+                            meets the highest standards of quality and
+                            sustainability.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Section 2 -->
+                <div
+                    class="flex flex-col md:flex-row-reverse items-center gap-16"
+                >
+                    <div class="w-full md:w-1/2">
+                        <img
+                            src="https://images.unsplash.com/photo-1600093463592-8e36ae95ef56?q=80&w=1000&auto=format&fit=crop"
+                            alt="Caviar Preparation"
+                            class="w-full h-[500px] object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                        />
+                    </div>
+                    <div class="w-full md:w-1/2">
+                        <h2 class="text-3xl font-serif text-white mb-6">
+                            Artisanal Craftsmanship
+                        </h2>
+                        <p class="text-gray-400 leading-relaxed mb-6">
+                            Our caviar is harvested using traditional methods
+                            that have been passed down through generations. We
+                            believe that the human touch is essential in
+                            preserving the delicate texture and flavor of the
+                            roe.
+                        </p>
+                        <p class="text-gray-400 leading-relaxed">
+                            From the selection of the sturgeon to the final
+                            curing process, every step is monitored by our
+                            master specialists to guarantee perfection.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</Layout>

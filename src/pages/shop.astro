@@ -1,0 +1,63 @@
+---
+import Layout from "../layouts/Layout.astro";
+import ProductCard from "../components/ProductCard.astro";
+
+const products = [
+    {
+        title: "Royal Beluga",
+        price: "€450.00",
+        weight: "50g",
+        image: "https://images.unsplash.com/photo-1626202378372-c26668764268?q=80&w=1000&auto=format&fit=crop",
+    },
+    {
+        title: "Imperial Ossetra",
+        price: "€280.00",
+        weight: "50g",
+        image: "https://images.unsplash.com/photo-1606850827286-a0e143491931?q=80&w=1000&auto=format&fit=crop",
+    },
+    {
+        title: "Golden Sevruga",
+        price: "€190.00",
+        weight: "50g",
+        image: "https://images.unsplash.com/photo-1550950158-d0d960dff51b?q=80&w=1000&auto=format&fit=crop",
+    },
+    {
+        title: "Kaluga Hybrid",
+        price: "€150.00",
+        weight: "50g",
+        image: "https://images.unsplash.com/photo-1606850827286-a0e143491931?q=80&w=1000&auto=format&fit=crop",
+    },
+    {
+        title: "Siberian Sturgeon",
+        price: "€120.00",
+        weight: "50g",
+        image: "https://images.unsplash.com/photo-1550950158-d0d960dff51b?q=80&w=1000&auto=format&fit=crop",
+    },
+    {
+        title: "White Sturgeon",
+        price: "€110.00",
+        weight: "50g",
+        image: "https://images.unsplash.com/photo-1626202378372-c26668764268?q=80&w=1000&auto=format&fit=crop",
+    },
+];
+---
+
+<Layout title="Shop">
+    <section class="pt-32 pb-20 bg-black min-h-screen">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <p class="text-gold tracking-widest uppercase text-sm mb-4">
+                    The Collection
+                </p>
+                <h1 class="text-4xl md:text-6xl font-serif text-white mb-8">
+                    Finest Caviar
+                </h1>
+                <div class="w-24 h-1 bg-gold mx-auto"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+                {products.map((product) => <ProductCard {...product} />)}
+            </div>
+        </div>
+    </section>
+</Layout>
